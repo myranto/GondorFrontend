@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-
+import { BuyButtonComponent } from '../../component/buy-button/buy-button.component';
 @Component({
   selector: 'app-catalog-item',
   standalone: true,
-  imports: [],
+  imports: [BuyButtonComponent],
   templateUrl: './catalog-item.component.html',
   styleUrl: './catalog-item.component.css'
 })

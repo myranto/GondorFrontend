@@ -2,7 +2,7 @@
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="relative z-10">
     <h1 class="text-2xl text-white mb-2">Produit du jour</h1>
-    <h3 class="text-4xl font-bold text-white mb-4">Baton enchanté de Lumos (500 $)</h3>
-    <button class="mt-8 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-md hover:bg-yellow-600">Acheter</button>
+    <h3 class="text-4xl font-bold text-white mb-4">{{ todayProduct.name }} ({{todayProduct.price}} $)</h3>
+    <app-buy-button [label]="'Acheter maintenant'"></app-buy-button>
   </div>
 </div>

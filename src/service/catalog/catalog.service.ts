@@ -19,4 +19,8 @@ export class CatalogService {
       { name: "Plume du phoenix", price: 150, image: 'assets/products/Phoenix-feather-quill.webp' }
     ];
   }
+
+  getTodayProduct() {
+    return { name: "Baton enchanté de Lumos", price: 500, image: 'assets/products/Enchanted-wand-of-lumos.webp' };
+  }
 }

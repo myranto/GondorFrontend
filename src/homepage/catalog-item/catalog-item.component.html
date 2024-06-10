@@ -1,5 +1,6 @@
-<div class="bg-black rounded-lg p-4 text-center transform transition-transform duration-300 hover:scale-105">
+<div class="bg-black rounded-lg p-4 text-center transform transition-transform duration-300 hover:scale-105 cursor-pointer">
   <img [src]="item.image" [alt]="item.name" class="w-full h-auto rounded-t-lg">
   <h3 class="text-lg font-semibold mt-4">{{ item.name }}</h3>
   <p class="text-sm text-gray-400">{{ item.price }} $</p>
+  <app-buy-button [label]="'Acheter'"></app-buy-button>
 </div>
