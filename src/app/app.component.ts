@@ -5,6 +5,7 @@ import { BannerComponent } from '../homepage/banner/banner.component';
 import { CatalogItemComponent } from '../homepage/catalog-item/catalog-item.component';
 import { CatalogComponent } from '../homepage/catalog/catalog.component';
 import { FooterComponent } from '../common/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
