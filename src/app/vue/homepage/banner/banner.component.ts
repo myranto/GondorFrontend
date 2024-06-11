@@ -10,8 +10,8 @@ import { ClientService } from '../../../service/client/client.service';
   styleUrl: './banner.component.css'
 })
 export class BannerComponent {
-  todayProduct : any;
   client: any;
+  todayProduct : any={};
 
   constructor(
     private catalogService: CatalogService,
@@ -21,8 +21,18 @@ export class BannerComponent {
   }
 
   ngOnInit(): void {
-    this.todayProduct = this.catalogService.getTodayProduct();
+    this.catalogService.getTodayProduct().subscribe({
+      next: v => {
+        console.log(v);
+        this.todayProduct = v
+      },
+      error: err => {
+        console.log(err)
+      }
+    })
+    
     this.client= this.clientService.getCurrentClient();
+    
   }
 
 

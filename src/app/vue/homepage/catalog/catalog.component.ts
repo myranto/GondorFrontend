@@ -14,13 +14,21 @@ import { TitleService } from '../../../service/title/title.service';
 })
 export class CatalogComponent {
   title = 'Liste des produits - Magic VenteStock, site de E-commerce';
-  catalogItems: any[];
+  catalogItems: any;
 
   constructor(private catalogService: CatalogService, private titleService: TitleService) { }
 
   ngOnInit(): void {
-    this.catalogItems = this.catalogService.getCatalogItems();
-    console.log(this.catalogItems);
+    this.catalogService.getCatalogItems().subscribe({
+      next: v => {
+        this.catalogItems = v
+      },
+      error: err => {
+        console.log(err)
+      }
+    })
+     
+    
     this.titleService.setTitle(this.title);
   }
 }
