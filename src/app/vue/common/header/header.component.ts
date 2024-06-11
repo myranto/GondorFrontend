@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
-// import { LoginComponent } from '../../app/login/login.component';
+import { LoginComponent } from '../../login/login.component';
 
 @Component({
   selector: 'app-header',

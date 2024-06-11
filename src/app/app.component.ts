@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../common/header/header.component';
-import { BannerComponent } from '../homepage/banner/banner.component';
-import { CatalogItemComponent } from '../homepage/catalog-item/catalog-item.component';
-import { CatalogComponent } from '../homepage/catalog/catalog.component';
-import { FooterComponent } from '../common/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './vue/common/header/header.component';
+import { CatalogComponent } from './vue/homepage/catalog/catalog.component';
+import { FooterComponent } from './vue/common/footer/footer.component';
 
 @Component({
   selector: 'app-root',

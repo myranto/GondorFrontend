@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { BannerComponent } from '../banner/banner.component';
 import { CatalogItemComponent } from '../catalog-item/catalog-item.component';
-import { CatalogService } from '../../service/catalog/catalog.service';
 import { CommonModule } from '@angular/common';
-import { TitleService } from '../../service/title/title.service';
+import { CatalogService } from '../../../service/catalog/catalog.service';
+import { TitleService } from '../../../service/title/title.service';
 
 @Component({
   selector: 'app-catalog',
