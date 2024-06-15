@@ -20,12 +20,13 @@ export class BannerComponent {
   ){
     this.isConnected = false;
   }
-  
+
 
   ngOnInit(): void {
     this.todayProduct = this.catalogService.getTodayProduct();
     this.clientService.currentClient$.subscribe((client: any) => {
-      this.isConnected = this.clientService.isconnected();      
+      this.isConnected = this.clientService.isconnected();
+      console.log(this.clientService.isconnected())
     });
   }
 
@@ -35,7 +36,7 @@ export class BannerComponent {
         width: '400px',
         panelClass: 'custom-dialog-container'
       });
-  
+
       dialogRef.afterClosed().subscribe(result => {
         console.log('Le dialogue a été fermé');
       });

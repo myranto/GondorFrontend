@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-bienvenue',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './bienvenue.component.css'
 })
 export class BienvenueComponent {
-
+  constructor() { }
 }
