@@ -1,0 +1,17 @@
+<div class="relative h-[90vh] bg-cover bg-center flex flex-col justify-center items-center text-center p-16" style="background-image: url('assets/products/Enchanted-wand-of-lumos.webp');">
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="relative z-10">   
+    <!-- <div id="welcome-box" class="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-md mx-auto flex flex-col items-center">
+      <img src="assets/magic-hat_8123561.png" alt="logo" class="h-24 w-auto mb-4">
+      <h2 class="text-2xl font-bold text-white mb-4" id="welcome-message">Bienvenue chez Magic VenteStock.</h2>
+      <p class="text-gray-300">Bonjour, {{client.nom}} {{client.prenom}}.</p>
+    </div> -->
+    <h1 class="text-2xl text-white mb-2">Produit du jour</h1>
+    <h3 class="text-4xl font-bold text-white mb-4">{{ todayProduct.name }} ({{todayProduct.price}} $)</h3>
+    
+    <label *ngIf="isConnected" class="block text-sm font-medium text-gray-300 mb-2" for="number">Quantité</label>
+    <input *ngIf="isConnected" type="number" id="number" name="number" min="0" class="w-full p-2 bg-gray-800 border border-gray-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+    
+    <app-buy-button [label]="'Acheter maintenant'" (click)="onClick()"></app-buy-button>
+  </div>
+</div>

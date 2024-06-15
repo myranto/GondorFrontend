@@ -1,7 +1,14 @@
 <header class="flex justify-between items-center h-20 px-6 text-white border-b border-gray-900">
   <div class="text-lg font-bold h-full">
     <img src="assets/MagicVenteStock.jpg" alt="logo" class="h-full w-auto">
-  </div>
+  </div>  
+  
+  <!-- <div id="welcome-box" class="bg-gray-800 rounded-lg shadow-md w-full max-w-md mx-auto flex flex-row items-center">
+    <img src="assets/magic-hat_8123561.png" alt="logo" class="h-24 w-auto mb-4">
+    <h2 class="text-2xl font-bold text-white mb-4" id="welcome-message">Bienvenue chez Magic VenteStock.</h2>
+    <p class="text-gray-300">Bonjour, La communaute Jar.</p>
+  </div> -->
+
   <div class="flex items-center space-x-4">
       <!-- <div class="relative">
           <input type="text" placeholder="Search" class="p-2 rounded-md border border-gray-700 bg-gray-800 text-white">
@@ -11,6 +18,9 @@
               </svg>
           </button>
       </div> -->
-      <button class="px-4 py-2 bg-gray-700 white font-semibold rounded-md hover:bg-yellow-600" (click)="openLoginDialog()">Se connecter</button>
+      <!-- <button class="px-4 py-2 bg-gray-700 white font-semibold rounded-md hover:bg-yellow-600" (click)="openLoginDialog()">Se connecter</button> -->
+
+      <p *ngIf="isConnected" class="mr-4">Bienvenue, {{client.nom}} {{client.prenom}}.</p>
+      <button class="px-4 py-2 bg-gray-700 white font-semibold rounded-md hover:bg-yellow-600" (click)="openLoginDialog()">{{ isConnected ? 'Se déconnecter' : 'S\'identifer' }}</button>
   </div>
 </header>

@@ -7,8 +7,6 @@ import { TitleService } from '../../../service/title/title.service';
 
 @Component({
   selector: 'app-catalog',
-  standalone: true,
-  imports: [BannerComponent, CommonModule,CatalogItemComponent],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css'
 })
