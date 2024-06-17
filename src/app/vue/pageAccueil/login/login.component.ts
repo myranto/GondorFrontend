@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { BienvenueComponent } from '../bienvenue/bienvenue.component';
 import { ClientService } from '../../../service/client/client.service';
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 @Component({
   selector: 'app-login',
@@ -19,20 +20,21 @@ export class LoginComponent {
     public dialogRef: MatDialogRef<LoginComponent>
   ) {}
 
-  onSubmit() {
+  async onSubmit() {
     // Implémentez la logique de connexion ici
-    this.clientService.login(this.pseudo, this.password);
+    const logged =  this.clientService.login(this.pseudo, this.password);
 
     // si la connexion est un succès, fermez la boîte de dialogue et affichez un message de bienvenue
     // changer la condition
-    if(true){
-      
+    console.log(logged)
+    if (await logged) {
+
 
       // ouvrez la boîte de dialogue de bienvenue
       this.openLoginDialog();
       // fermez la boîte de dialogue de connexion
       this.dialogRef.close();
-    }else{
+    } else {
       // sinon, affichez un message d'erreur
       console.log("Erreur de connexion");
       this.error = true;

@@ -17,8 +17,15 @@ export class CatalogComponent {
   constructor(private catalogService: CatalogService, private titleService: TitleService) { }
 
   ngOnInit(): void {
-    this.catalogItems = this.catalogService.getCatalogItems();
-    console.log(this.catalogItems);
+    this.catalogService.getCatalogItems().subscribe({
+      next: v => {
+        this.catalogItems = v
+      },
+      error: err => {
+        console.log(err)
+      }
+    })
+    // console.log(this.catalogItems);
     this.titleService.setTitle(this.title);
   }
 }
