@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ClientService } from '../../../service/client/client.service';
 
 @Component({
   selector: 'app-bienvenue',
@@ -7,5 +8,14 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './bienvenue.component.css'
 })
 export class BienvenueComponent {
-  constructor() { }
+  client: string;
+  constructor(    
+    private clientService: ClientService
+  ) {}
+  
+  ngOnInit(): void {
+    this.clientService.currentClient$.subscribe((client: any) => {      
+      this.client = client;
+    });
+  }
 }

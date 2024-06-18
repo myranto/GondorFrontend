@@ -1,13 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatalogService {
+  postUrl = `http://localhost:8081`;
+   
+  private toDaySubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  public toDay$: Observable<any> = this.toDaySubject.asObservable();
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getCatalogItems() {
+    // return  this.http.get(this.postUrl)
     return [
       { name: "Baton enchanté de Lumos", price: 500, image: 'assets/products/Enchanted-wand-of-lumos.webp' },
       { name: "Potion d'éternel jeunesse", price: 300, image: 'assets/products/Potion-of-eternal-youth.webp' },
@@ -18,9 +27,12 @@ export class CatalogService {
       { name: "Balaie de sorcier", price: 250, image: 'assets/products/Witchs-broomstick.webp' },
       { name: "Plume du phoenix", price: 150, image: 'assets/products/Phoenix-feather-quill.webp' }
     ];
+
+
   }
 
   getTodayProduct() {
-    return { name: "Baton enchanté de Lumos", price: 500, image: 'assets/products/Enchanted-wand-of-lumos.webp' };
+    return this.http.get(`${this.postUrl}`.concat('/du-jour'));    
+    // return { name: "Baton enchanté de Lumos", price: 500, image: 'assets/products/Enchanted-wand-of-lumos.webp' };
   }
 }

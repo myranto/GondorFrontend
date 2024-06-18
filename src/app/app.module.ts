@@ -14,6 +14,7 @@ import { CatalogItemComponent } from './vue/pageAccueil/catalog-item/catalog-ite
 import { CatalogComponent } from './vue/pageAccueil/catalog/catalog.component';
 import { LoginComponent } from './vue/pageAccueil/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const APP_CONTAINERS = [
     HeaderComponent,
@@ -36,7 +37,8 @@ const APP_CONTAINERS = [
     AppRoutingModule,
     FormsModule,          
     ReactiveFormsModule,
-    CommonModule    
+    CommonModule,  
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
