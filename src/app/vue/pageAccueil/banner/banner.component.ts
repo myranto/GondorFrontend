@@ -23,7 +23,14 @@ export class BannerComponent {
 
 
   ngOnInit(): void {
-    this.todayProduct = this.catalogService.getTodayProduct();
+    this.catalogService.getTodayProduct().subscribe({
+      next: v => {
+        this.todayProduct = v
+      },
+      error: err => {
+        console.log(err)
+      }
+    })
     this.clientService.currentClient$.subscribe((client: any) => {
       this.isConnected = this.clientService.isconnected();
       console.log(this.clientService.isconnected())

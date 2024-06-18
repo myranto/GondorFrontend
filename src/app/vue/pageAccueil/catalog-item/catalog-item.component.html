@@ -1,6 +1,7 @@
 <div class="bg-black rounded-lg p-4 text-center transform transition-transform duration-300 hover:scale-105 cursor-pointer">
   <img [src]="item.images" [alt]="item.libelle" class="w-full h-auto rounded-t-lg">
-  <h3 class="text-lg font-semibold mt-4">{{ item.name }}</h3>
-  <p class="text-sm text-gray-400">{{ item.price }} $</p>
+  <h3 class="text-lg font-semibold mt-4">{{ item.libelle }}</h3>
+  <p class="text-sm text-gray-400">Stock :{{ item.quantiteenstock }}</p>
+  <p class="text-sm text-gray-400">{{ item.prix }} $</p>
   <app-buy-button [label]="'Acheter'"  (click)="onClick()"></app-buy-button>
 </div>
