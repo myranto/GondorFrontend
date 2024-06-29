@@ -32,7 +32,8 @@ export class LoginComponent {
 
       // ouvrez la boîte de dialogue de bienvenue
       this.openLoginDialog();
-      // fermez la boîte de dialogue de connexion
+      // fermez la boîte de dialogue
+      // de connexion
       this.dialogRef.close();
     } else {
       // sinon, affichez un message d'erreur

@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ClientService {
   postUrl = `http://localhost:8081`
+  // postUrl = `https://dd98-102-17-120-107.ngrok-free.app`
   private currentClientSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public currentClient$: Observable<any> = this.currentClientSubject.asObservable();
 

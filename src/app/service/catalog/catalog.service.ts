@@ -8,6 +8,7 @@ import {Observable} from "rxjs";
 export class CatalogService {
 
   constructor(private http: HttpClient) { }
+  // postUrl = `http://localhost:8081`
   postUrl = `http://localhost:8081`
 
   getCatalogItems():Observable<any> {
