@@ -20,6 +20,10 @@ export class ClientService {
   isconnected(): boolean {
     return !!this.currentClientSubject.getValue() || !!localStorage.getItem('currentClient');
   }
+  // updateClient(client: any): void {
+  //   this.currentClientSubject.next(client);
+  //   // this.isConnected = !!client; // Set isConnected based on whether client is truthy
+  // }
 
   async login(pseudo: any, mdp: any) {
     const person = {
@@ -27,12 +31,13 @@ export class ClientService {
       password: mdp,
     }
      try {
-       const response = await firstValueFrom(
+      const user = await firstValueFrom(
          this.http.post(this.postUrl + '/login', person)
        );
-       const clientData = { numero: 'a', pseudo: pseudo, motDePasse: mdp, nom: "La Communaute", prenom: "Jar" };
-       localStorage.setItem('currentClient', JSON.stringify(clientData));
-       this.currentClientSubject.next(clientData);
+
+       //const clientData = { numero: 'a', pseudo: pseudo, motDePasse: mdp, nom: "La Communaute", prenom: "Jar" };
+       localStorage.setItem('currentClient', JSON.stringify(user));
+       this.currentClientSubject.next(user);
        return true;
      } catch (error) {
        // Handle error here

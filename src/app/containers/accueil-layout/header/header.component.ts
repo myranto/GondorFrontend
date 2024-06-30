@@ -13,15 +13,12 @@ export class HeaderComponent {
   isConnected: boolean;
   client: any;
   logStr: string;
-  
+
   constructor(
     public dialog: MatDialog,
     private clientService: ClientService
   ) {
-    this.isConnected = false;
-  }
-  
-  ngOnInit(): void {
+    // this.isConnected = false;
     this.clientService.currentClient$.subscribe((client: any) => {
       this.isConnected = this.clientService.isconnected();
       this.client = client;
@@ -37,10 +34,10 @@ export class HeaderComponent {
         width: '400px',
         panelClass: 'custom-dialog-container'
       });
-  
+
       dialogRef.afterClosed().subscribe(result => {
         console.log('Le dialogue a été fermé');
       });
-    }    
+    }
   }
 }

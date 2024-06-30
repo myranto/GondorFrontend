@@ -28,8 +28,6 @@ export class LoginComponent {
     // changer la condition
     console.log(logged)
     if (await logged) {
-
-
       // ouvrez la boîte de dialogue de bienvenue
       this.openLoginDialog();
       // fermez la boîte de dialogue
