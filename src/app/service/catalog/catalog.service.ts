@@ -20,7 +20,7 @@ export class CatalogService <T>{
     // return { name: "Baton enchanté de Lumos", price: 500, image: 'assets/products/Enchanted-wand-of-lumos.webp' };
   }
 }
-export const url = "https://bd82-102-17-141-74.ngrok-free.app";
+export const url = "https://1fc9-102-17-141-74.ngrok-free.app";
 // export const url = "http://localhost:8081";
 export const headers = new HttpHeaders({
   'ngrok-skip-browser-warning': 'true',
