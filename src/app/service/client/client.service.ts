@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, firstValueFrom, Observable, Subject} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
-import {url} from "../catalog/catalog.service";
+import {headers, url} from "../catalog/catalog.service";
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class ClientService {
     }
      try {
       const user = await firstValueFrom(
-         this.http.post(this.postUrl + '/login', person)
+         this.http.post(this.postUrl + '/login', person, {headers})
        );
 
        //const clientData = { numero: 'a', pseudo: pseudo, motDePasse: mdp, nom: "La Communaute", prenom: "Jar" };
