@@ -12,17 +12,13 @@ import { LoginComponent } from '../login/login.component';
 export class BannerComponent {
   todayProduct : any;
   isConnected: boolean = false;
+  client: any;
 
   constructor(
     public dialog: MatDialog,
-    private catalogService: CatalogService,
+    private catalogService: CatalogService<any>,
     private clientService: ClientService
   ){
-    this.isConnected = false;
-  }
-
-
-  ngOnInit(): void {
     this.catalogService.getTodayProduct().subscribe({
       next: v => {
         this.todayProduct = v
@@ -33,9 +29,10 @@ export class BannerComponent {
     })
     this.clientService.currentClient$.subscribe((client: any) => {
       this.isConnected = this.clientService.isconnected();
-      console.log(this.clientService.isconnected())
+      this.client = client;
     });
   }
+
 
   onClick(){
     if(!this.isConnected){

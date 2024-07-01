@@ -29,7 +29,7 @@ export class LoginComponent {
     console.log(logged)
     if (await logged) {
       // ouvrez la boîte de dialogue de bienvenue
-      this.openLoginDialog();
+      // this.openLoginDialog();
       // fermez la boîte de dialogue
       // de connexion
       this.dialogRef.close();

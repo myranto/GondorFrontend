@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, firstValueFrom, Observable, Subject} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
+import {url} from "../catalog/catalog.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  postUrl = `http://localhost:8081`
-  // postUrl = `https://dd98-102-17-120-107.ngrok-free.app`
+  //postUrl = `http://localhost:8081`
+  postUrl = url
   private currentClientSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public currentClient$: Observable<any> = this.currentClientSubject.asObservable();
 

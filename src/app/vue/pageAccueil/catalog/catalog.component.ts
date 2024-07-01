@@ -14,7 +14,7 @@ export class CatalogComponent {
   title = 'Liste des produits - Magic VenteStock, site de E-commerce';
   catalogItems: any[];
 
-  constructor(private catalogService: CatalogService, private titleService: TitleService) { }
+  constructor(private catalogService: CatalogService<any>, private titleService: TitleService) { }
 
   ngOnInit(): void {
     this.catalogService.getCatalogItems().subscribe({
